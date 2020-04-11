@@ -395,7 +395,29 @@ Date tempMax = dates[0];
 /*
 Сортирует массив дат по указанному критерию
 */
-void sort(Date dates[], SortBy sortBy = SortBy::Date);
+void sort(Date dates[], SortBy sortBy = SortBy::Date)
+{
+    if(sortBy == SortBy::Season)
+    {
+        for(int i=0; i< sizeof(dates)/sizeof(dates[0]); i++)
+        {
+       for(int j=0; j< sizeof(dates)/sizeof(dates[0]); j++)
+        {
+       if(static_cast<int>(getSeason (dates[j])) > static_cast<int>(getSeason (dates[j+1])) ){Date temp = dates[j] ;dates[j] =dates[j+1]; dates[j+1]=temp; }
+        }
+        }
+    }
+    else if(sortBy == SortBy::Date)
+    {
+        for(int i=0; i< sizeof(dates)/sizeof(dates[0]); i++)
+        {
+       for(int j=0; j< sizeof(dates)/sizeof(dates[0]); j++)
+        {
+       if(static_cast<int>(countJND (dates[j])) > static_cast<int>(countJND (dates[j+1])) ){Date temp = dates[j] ;dates[j] =dates[j+1]; dates[j+1]=temp; }
+        }
+        }
+    }
+}
 
 
 }
