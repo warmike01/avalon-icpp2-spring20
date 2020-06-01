@@ -26,7 +26,7 @@ int main()
     cout << "Введите номер треугольника: "
     cin >> id;
     for(int i=0; i<id; i++){input.read(reinterpret_cast<triangle>(find), TRIANGLE_SIZE); }
-    printf("A= %d, B= %d, C= %d, thickness= %d",a,b,c,thickness);
+    printf("A= %d, B= %d, C= %d, thickness= %d",triangle.a,triangle.b,triangle.c,triangle.thickness);
     return 0;
 }
 
